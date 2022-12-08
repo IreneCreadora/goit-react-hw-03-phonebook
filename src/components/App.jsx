@@ -47,8 +47,6 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    // console.log('App componentDidMount');
-
     const contacts = localStorage.getItem('contacts');
     const parsedContacts = JSON.parse(contacts);
 
@@ -58,8 +56,6 @@ export class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log('App componentDidUpdate');
-
     const nextContacts = this.state.contacts;
     const prevContacts = prevState.contacts;
 
@@ -67,10 +63,6 @@ export class App extends Component {
       console.log('Обновилось поле todos, записываю todos в хранилище');
       localStorage.setItem('contacts', JSON.stringify(nextContacts));
     }
-
-    // if (nextContacts.length > prevContacts.length && prevContacts.length !== 0) {
-    //   this.toggleModal();
-    // }
   }
 
   handleFilterChange = e => {
