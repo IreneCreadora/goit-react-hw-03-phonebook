@@ -1,7 +1,4 @@
-// import { Component } from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
-// import styled from 'styled-components';
 import {
   FormStyled,
   Label,
@@ -11,6 +8,10 @@ import {
   ErrorText,
 } from '../Component.styled';
 
+import { relations } from './relations';
+import { initialValues } from './initialValuesData';
+import { validationSchema } from './yup-validation';
+
 const FormError = ({ name }) => {
   return (
     <ErrorMessage
@@ -18,26 +19,6 @@ const FormError = ({ name }) => {
       render={message => <ErrorText>{message}</ErrorText>}
     />
   );
-};
-
-const relations = ['Family', 'Friends', 'Colleagues', 'Services'];
-
-const validationSchema = Yup.object({
-  relation: Yup.string().required('Please select a relation').oneOf(relations),
-  name: Yup.string().required(),
-  number: Yup.number().min(8, 'Too Short!').required(),
-  notes: Yup.string(),
-  // birthDate: Yup.date().nullable().min(new Date(1960, 0, 30)),
-  importantContact: Yup.boolean().default(false),
-});
-
-const initialValues = {
-  name: '',
-  number: '',
-  notes: '',
-  birthDate: new Date(1960, 0, 30).toLocaleDateString(),
-  importantContact: false,
-  relation: '',
 };
 
 const ContactForm = ({ onSubmit }) => {
