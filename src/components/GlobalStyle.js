@@ -16,11 +16,7 @@ export const GlobalStyle = createGlobalStyle`
       rgba(69, 252, 247, 1) 100%
     );
   }
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  
-      * {
+  * {
       box-sizing: border-box;
     }
     
@@ -56,5 +52,8 @@ export const GlobalStyle = createGlobalStyle`
     
     button {
       cursor: pointer;
-    }  }
+    }  
+    code {
+      font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;}
 `;
