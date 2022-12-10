@@ -67,7 +67,7 @@ const ContactForm = ({ onSubmit }) => {
           <div>
             <Input
               name="birthDate"
-              type="text"
+              type="date"
               placeholder="Date of birthday"
             />
             <FormError name="birthDate" />
